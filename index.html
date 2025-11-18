@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MG Property Services | Intelligent Home Buying</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span>MG PROPERTY SERVICES</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#journey" class="nav-link">Our Journey</a>
+                <a href="#stages" class="nav-link">Process</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#difference" class="nav-link">What Makes Us Different</a>
+                <a href="#metrics" class="nav-link">Results</a>
+                <button class="nav-button" onclick="scrollToBooking()">Book An Appointment</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <strong>We're with you every step of the journey</strong>
+                </h1>
+                <p class="hero-subtitle">
+                    <strong>Lost souls fall prey to FOMO, spam & deceit.<br>Not you. Our experts will guide you home.</strong>
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="scrollToBooking()">Book An Appointment</button>
+                    <button class="btn-secondary" onclick="scrollToStages()">View Our Process</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-elements">
+                    <div class="floating-element element-1">
+                        <i class="fas fa-home"></i>
+                        <span>Curated Homes</span>
+                    </div>
+                    <div class="floating-element element-2">
+                        <i class="fas fa-handshake"></i>
+                        <span>Smart Negotiation</span>
+                    </div>
+                    <div class="floating-element element-3">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Risk Analysis</span>
+                    </div>
+                    <div class="floating-element element-4">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Investment Insights</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Metrics -->
+    <section id="metrics" class="trust-metrics">
+        <div class="metrics-container">
+            <div class="metric-item">
+                <h3>100+</h3>
+                <p>Happy Homeowners</p>
+            </div>
+            <div class="metric-item">
+                <h3>100+</h3>
+                <p>Projects Completed</p>
+            </div>
+            <div class="metric-item">
+                <h3>100+</h3>
+                <p>Expert Consultations</p>
+            </div>
+            <div class="metric-item">
+                <h3>100+</h3>
+                <p>Partner Builders</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Stages Section -->
+    <section id="stages" class="stages-section">
+        <div class="container">
+            <div class="stages-header">
+                <h2 class="section-title"><strong>Our 6-Step Home Buying Journey</strong></h2>
+                <p class="section-subtitle">
+                    From discovery to moving in, we guide you through every step with expertise and care
+                </p>
+            </div>
+
+            <div class="stages-slider">
+                <div class="slider-container">
+                    <div class="slider-track">
+                        <!-- Stage 1 -->
+                        <div class="stage-card active">
+                            <div class="stage-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h3><strong>Stage 1 - Discovery</strong></h3>
+                            <p><strong>Tell us about you & your ideal home</strong></p>
+                            <ul>
+                                <li>You can start with the location, budget & purpose</li>
+                                <li>We'll help prioritise your family's top deal-breakers</li>
+                                <li>We'll dig deeper on past homes to tailor the search</li>
+                            </ul>
+                        </div>
+
+                        <!-- Stage 2 -->
+                        <div class="stage-card">
+                            <div class="stage-icon">
+                                <i class="fas fa-list-alt"></i>
+                            </div>
+                            <h3><strong>Stage 2 - Shortlisting</strong></h3>
+                            <p><strong>Cherry-pick from curated options</strong></p>
+                            <ul>
+                                <li>Explore homes sorted by location, builder & budget</li>
+                                <li>Get insights on areas, return potential & floor plans</li>
+                                <li>Cherry-pick the ones you like & book guided visits</li>
+                            </ul>
+                        </div>
+
+                        <!-- Stage 3 -->
+                        <div class="stage-card">
+                            <div class="stage-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h3><strong>Stage 3 - Site visits</strong></h3>
+                            <p><strong>Visit sites with our market wizards</strong></p>
+                            <ul>
+                                <li>Get free pick & drop services from your doorstep</li>
+                                <li>Assess the project, builder & areas with our wizards</li>
+                                <li>Get latest pricing, availability, offers & legal terms</li>
+                            </ul>
+                        </div>
+
+                        <!-- Stage 4 -->
+                        <div class="stage-card">
+                            <div class="stage-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h3><strong>Stage 4 - Analysis</strong></h3>
+                            <p><strong>Foresee design, legal & financial risks</strong></p>
+                            <ul>
+                                <li>Spot what others overlook, including:</li>
+                                <li>Lighting & Ventilation / Vastu Analysis</li>
+                                <li>Builder Pedigree / Construction Delays</li>
+                                <li>Hidden Costs / Legal Troubles</li>
+                            </ul>
+                        </div>
+
+                        <!-- Stage 5 -->
+                        <div class="stage-card">
+                            <div class="stage-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h3><strong>Stage 5 - Negotiation</strong></h3>
+                            <p><strong>Negotiate & seal the deal confidently</strong></p>
+                            <ul>
+                                <li>Armed with insights & risk assessments, we will:</li>
+                                <li>Negotiate on your behalf</li>
+                                <li>Secure the best possible offer</li>
+                                <li>Ensure you book with total peace of mind</li>
+                            </ul>
+                        </div>
+
+                        <!-- Stage 6 -->
+                        <div class="stage-card">
+                            <div class="stage-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <h3><strong>Stage 6 - Home sweet Home</strong></h3>
+                            <p><strong>Connect with financial & legal experts</strong></p>
+                            <ul>
+                                <li>Our trusted experts handle:</li>
+                                <li>Title and encumbrance checks</li>
+                                <li>Agreement reviews</li>
+                                <li>Loan offers & more</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-controls">
+                    <button class="slider-btn prev-btn">
+                        <i class="fas fa-chevron-left"></i> Previous
+                    </button>
+                    
+                    <div class="slider-dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                        <span class="dot" data-slide="3"></span>
+                        <span class="dot" data-slide="4"></span>
+                        <span class="dot" data-slide="5"></span>
+                    </div>
+                    
+                    <button class="slider-btn next-btn">
+                        Next <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Home Buying Experience Section -->
+    <section class="home-experience-section">
+        <div class="container">
+            <h1><strong>Find Your Perfect Home</strong></h1>
+            
+            <div class="main-text">
+                Experience <span class="highlight">delightful home buying</span> so your loved ones can say <span class="highlight">home sweet home</span>.
+            </div>
+            
+            <div class="icons-section">
+                <!-- Dream Home Card -->
+                <div class="dream-home-card">
+                    <div class="dream-home-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="dream-home-label">Dream Home</div>
+                </div>
+                
+                <!-- Happy Family Card -->
+                <div class="happy-family-card">
+                    <div class="happy-family-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="happy-family-label">Happy Family</div>
+                </div>
+            </div>
+            
+            <div class="cta-section">
+                <button class="btn-primary large" onclick="scrollToBooking()">
+                    <i class="fas fa-calendar-check"></i> Book An Appointment
+                </button>
+            </div>
+            
+            <div class="benefits">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏠</div>
+                    <h3><strong>Expert Guidance</strong></h3>
+                    <p>Our experienced agents will help you find the perfect home for your family.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3><strong>Best Prices</strong></h3>
+                    <p>Get the best value with our negotiation expertise and market knowledge.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3><strong>Quick Process</strong></h3>
+                    <p>Streamlined home buying process to get you into your new home faster.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🛡️</div>
+                    <h3><strong>Secure Transaction</strong></h3>
+                    <p>Your investment is protected with our secure and transparent process.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Makes Us Different -->
+    <section id="difference" class="difference-section">
+        <div class="container">
+            <div class="difference-header">
+                <h2 class="section-title"><strong>What makes us different?</strong></h2>
+                <p class="section-subtitle">
+                    Our homebuyers say we're <span class="highlight-text">refreshing, intelligent and supportive.</span> Here's why.
+                </p>
+            </div>
+
+            <div class="comparison-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="online-portals">Compare with Online Portals</button>
+                    <button class="tab-btn" data-tab="local-brokers">Compare with Local Brokers</button>
+                </div>
+
+                <!-- Online Portals Comparison -->
+                <div class="tab-content active" id="online-portals">
+                    <div class="comparison-table">
+                        <div class="table-header">
+                            <div class="table-cell">What you care about</div>
+                            <div class="table-cell">MG PROPERTY SERVICES</div>
+                            <div class="table-cell">Online Portals (Housing/99Acres/Magicbricks)</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">Information Depth</div>
+                            <div class="table-cell highlight">80+ data points</div>
+                            <div class="table-cell">20-40 data points</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">Transparency</div>
+                            <div class="table-cell highlight">Detailed pros & cons</div>
+                            <div class="table-cell">Only pros highlighted</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">Data Accuracy</div>
+                            <div class="table-cell highlight">Verified by architects</div>
+                            <div class="table-cell">Loose verification</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">Service Validity</div>
+                            <div class="table-cell highlight">Till you find your home</div>
+                            <div class="table-cell">Based on no. of contacts</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">Data Sources</div>
+                            <div class="table-cell highlight">RERA, GMaps, CDP etc.</div>
+                            <div class="table-cell">Added by developer & broker</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Local Brokers Comparison -->
+                <div class="tab-content" id="local-brokers">
+                    <div class="comparison-table">
+                        <div class="table-header">
+                            <div class="table-cell">What you care about</div>
+                            <div class="table-cell">MG PROPERTY SERVICES</div>
+                            <div class="table-cell">Local Brokers</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">Sales Practices</div>
+                            <div class="table-cell highlight">Consultative, no pressure</div>
+                            <div class="table-cell">High pressure sales tactics</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">Transparency</div>
+                            <div class="table-cell highlight">Detailed pros & cons</div>
+                            <div class="table-cell">Only pros highlighted</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">Project Curation</div>
+                            <div class="table-cell highlight">Based on 20+ factors</div>
+                            <div class="table-cell">Not curated</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">Spam</div>
+                            <div class="table-cell highlight">No spam</div>
+                            <div class="table-cell">High spamming until closure</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">Post sales support</div>
+                            <div class="table-cell highlight">End-to-end support</div>
+                            <div class="table-cell">None</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">Site Visits</div>
+                            <div class="table-cell highlight">Assisted by on-ground market experts</div>
+                            <div class="table-cell">No market expertise</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">Negotiation</div>
+                            <div class="table-cell highlight">High leverage via insights</div>
+                            <div class="table-cell">No insights to leverage</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">In-Depth Reports</div>
+                            <div class="table-cell highlight">2 complimentary Peace of Mind Reports</div>
+                            <div class="table-cell">None</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">Advisor</div>
+                            <div class="table-cell highlight">Trained architects</div>
+                            <div class="table-cell">Local sales people</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Services -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="services-header">
+                <h2 class="section-title"><strong>That's not all, we're really with you every step of the way</strong></h2>
+                <p class="section-subtitle">
+                    From home loans, legal, taxes, interiors to printing housewarming invites, we've got you covered
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3><strong>Home Loan Offers</strong></h3>
+                    <p>Get the best home loan rates from our partner banks with special offers</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3><strong>Legal Due Diligence</strong></h3>
+                    <p>Complete legal verification and documentation support for peace of mind</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3><strong>Tax Planning</strong></h3>
+                    <p>Expert tax advice and planning to maximize your savings and benefits</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3><strong>Quality Inspection</strong></h3>
+                    <p>Professional quality checks and construction progress monitoring</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-compass"></i>
+                    </div>
+                    <h3><strong>Vastu Advisors</strong></h3>
+                    <p>Expert Vastu consultation for harmonious living space planning</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <h3><strong>Interior Designers</strong></h3>
+                    <p>Professional interior design services to make your house a home</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2><strong>Ready to Find Your Dream Home?</strong></h2>
+            <p>Join hundreds of smart homebuyers who've found their perfect home with our expert guidance.</p>
+            <button class="btn-primary large" onclick="scrollToBooking()">Book An Appointment</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MG PROPERTY SERVICES</h3>
+                    <p>Making home buying intelligent, efficient, and stress-free.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="#journey">Our Journey</a>
+                    <a href="#stages">Process</a>
+                    <a href="#services">Services</a>
+                    <a href="#difference">What Makes Us Different</a>
+                    <a href="#metrics">Results</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@mgpropertyservices.com</p>
+                    <p>Phone: +91 9876543210</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MG PROPERTY SERVICES. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2><strong>Start Your Home Buying Journey</strong></h2>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="">Preferred Budget Range</option>
+                        <option value="50-80">50-80 Lakhs</option>
+                        <option value="80-1.2">80 Lakhs - 1.2 Cr</option>
+                        <option value="1.2-2">1.2 - 2 Cr</option>
+                        <option value="2+">2 Cr+</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="">Preferred Location</option>
+                        <option value="whitefield">Whitefield</option>
+                        <option value="sarjapur">Sarjapur Road</option>
+                        <option value="electronic-city">Electronic City</option>
+                        <option value="hebbal">Hebbal</option>
+                        <option value="other">Other Areas</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary">Start My Journey</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
