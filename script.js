@@ -1,10 +1,34 @@
 // Mobile Navigation Toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
+const navLinks = document.querySelectorAll('.nav-link');
 
-hamburger.addEventListener('click', () => {
+function toggleMobileMenu() {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
+    document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
+}
+
+hamburger.addEventListener('click', toggleMobileMenu);
+
+// Close mobile menu when clicking on links
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (navMenu.classList.contains('active') && 
+        !navMenu.contains(e.target) && 
+        !hamburger.contains(e.target)) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
 });
 
 // Modal functionality
@@ -119,7 +143,7 @@ class StagesSlider {
         });
         
         // Auto-advance slides (optional)
-        // this.startAutoSlide();
+        this.startAutoSlide();
         
         this.updateSlider();
     }
@@ -165,16 +189,19 @@ class StagesSlider {
     }
 }
 
-// Navbar scroll behavior
+// Enhanced Navbar scroll behavior
 let lastScrollY = window.scrollY;
 const navbar = document.querySelector('.navbar');
 
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
+    const currentScrollY = window.scrollY;
+    
+    if (currentScrollY > 100) {
         navbar.style.background = 'rgba(255, 255, 255, 0.98)';
         navbar.style.boxShadow = '0 5px 30px rgba(0,0,0,0.15)';
+        navbar.style.padding = '0';
         
-        if (window.scrollY > lastScrollY) {
+        if (currentScrollY > lastScrollY && currentScrollY > 200) {
             navbar.classList.add('hidden');
         } else {
             navbar.classList.remove('hidden');
@@ -182,13 +209,14 @@ window.addEventListener('scroll', () => {
     } else {
         navbar.style.background = 'rgba(255, 255, 255, 0.98)';
         navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+        navbar.style.padding = '0';
         navbar.classList.remove('hidden');
     }
     
-    lastScrollY = window.scrollY;
+    lastScrollY = currentScrollY;
 });
 
-// Intersection Observer for animations
+// Enhanced Intersection Observer for animations
 const createObserver = (elements, callback, options = {}) => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -202,34 +230,41 @@ const createObserver = (elements, callback, options = {}) => {
     return observer;
 };
 
-// Animate metric items
+// Animate metric items with staggered delay
 const metricItems = document.querySelectorAll('.metric-item');
-createObserver(metricItems, (item) => {
-    item.classList.add('animated');
+createObserver(metricItems, (item, index) => {
+    setTimeout(() => {
+        item.classList.add('animated');
+    }, index * 200);
 }, { threshold: 0.5, rootMargin: '0px 0px -50px 0px' });
 
-// Animate service cards
+// Animate service cards with staggered delay
 const serviceCards = document.querySelectorAll('.service-card');
-createObserver(serviceCards, (card) => {
-    card.classList.add('animated');
+createObserver(serviceCards, (card, index) => {
+    setTimeout(() => {
+        card.classList.add('animated');
+    }, index * 150);
 }, { threshold: 0.3, rootMargin: '0px 0px -50px 0px' });
 
-// Trust metrics counter animation
+// Enhanced Trust metrics counter animation
 function animateCounters() {
     const counters = document.querySelectorAll('.metric-item h3');
     
-    counters.forEach(counter => {
+    counters.forEach((counter, index) => {
         const target = 100;
         let current = 0;
         const increment = target / 50;
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                current = target;
-                clearInterval(timer);
-            }
-            counter.textContent = Math.floor(current) + '+';
-        }, 30);
+        
+        setTimeout(() => {
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                counter.textContent = Math.floor(current) + '+';
+            }, 30);
+        }, index * 300);
     });
 }
 
@@ -248,14 +283,66 @@ if (trustMetrics) {
     metricsObserver.observe(trustMetrics);
 }
 
-// Add loading animation
+// Add loading animation with enhanced effects
 window.addEventListener('load', () => {
     document.body.style.opacity = '0';
-    document.body.style.transition = 'opacity 0.5s ease';
+    document.body.style.transition = 'opacity 0.8s ease';
     
     setTimeout(() => {
         document.body.style.opacity = '1';
+        
+        // Add subtle animation to hero elements
+        const heroTitle = document.querySelector('.hero-title');
+        const heroSubtitle = document.querySelector('.hero-subtitle');
+        const heroButtons = document.querySelector('.hero-buttons');
+        
+        if (heroTitle) heroTitle.style.animation = 'slideInLeft 1s ease-out';
+        if (heroSubtitle) heroSubtitle.style.animation = 'slideInLeft 1s ease-out 0.2s both';
+        if (heroButtons) heroButtons.style.animation = 'slideInLeft 1s ease-out 0.4s both';
     }, 100);
+});
+
+// Enhanced parallax effect
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const hero = document.querySelector('.hero');
+    const heroVisual = document.querySelector('.hero-visual');
+    
+    if (hero) {
+        const rate = scrolled * -0.5;
+        hero.style.transform = `translateY(${rate}px)`;
+    }
+    
+    if (heroVisual) {
+        const rate = scrolled * 0.3;
+        heroVisual.style.transform = `translateY(${rate}px)`;
+    }
+});
+
+// Add hover effects to interactive elements
+document.addEventListener('DOMContentLoaded', () => {
+    // Add ripple effect to buttons
+    const buttons = document.querySelectorAll('.btn-primary, .btn-secondary, .nav-button');
+    buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            const ripple = document.createElement('span');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+            
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            ripple.classList.add('ripple');
+            
+            this.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+    });
 });
 
 // Initialize everything when DOM is loaded
@@ -263,13 +350,28 @@ document.addEventListener('DOMContentLoaded', () => {
     new ComparisonTabs();
     new StagesSlider();
     
-    // Add parallax effect to hero section
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const hero = document.querySelector('.hero');
-        if (hero) {
-            const rate = scrolled * -0.5;
-            hero.style.transform = `translateY(${rate}px)`;
+    // Add CSS for ripple effect
+    const style = document.createElement('style');
+    style.textContent = `
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            transform: scale(0);
+            animation: ripple-animation 0.6s linear;
         }
-    });
+        
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+        
+        .btn-primary, .btn-secondary, .nav-button {
+            position: relative;
+            overflow: hidden;
+        }
+    `;
+    document.head.appendChild(style);
 });
